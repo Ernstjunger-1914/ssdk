@@ -17,11 +17,11 @@ open class DeviceUtil(
         const val TAG: String = "DeviceUtil"
     }
 
-    private val telephonyManager: TelephonyManager by lazy {
+    protected val telephonyManager: TelephonyManager by lazy {
         applicationContext.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
     }
 
-    private val subscriptionManager: SubscriptionManager
+    protected val subscriptionManager: SubscriptionManager
         @RequiresApi(value = Build.VERSION_CODES.LOLLIPOP_MR1)
         get() = applicationContext.getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE) as SubscriptionManager
 
